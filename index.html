@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14213d">
+  <title>Flappy Bird 3.0 - Offline Arcade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="mobile-mode">
+
+  <main class="app">
+
+    <header class="topbar">
+      <div>
+        <h1>🐤 FLAPPY BIRD <span>2.0</span></h1>
+        <small>ULTIMATE OFFLINE ARCADE</small>
+      </div>
+      <div class="wallet">🪙 <b id="wallet">0</b></div>
+    </header>
+
+    <section class="game-box">
+
+      <canvas id="gameCanvas" width="420" height="640"></canvas>
+
+      <div class="hud hidden" id="hud">
+        <span>⭐ <b id="score">0</b></span>
+        <span>🪙 <b id="coins">0</b></span>
+        <span>🏆 <b id="best">0</b></span>
+        <span id="timer"></span>
+        <button id="pauseBtn">Ⅱ</button>
+      </div>
+
+      <div class="overlay" id="menu">
+        <h2>READY TO FLY?</h2>
+        <p class="muted">Choose your adventure</p>
+
+        <div class="player-info">
+          Level <b id="level">1</b> ·
+          <span id="playerName">PLAYER</span>
+        </div>
+
+        <label for="screenMode">Screen Layout</label>
+        <select id="screenMode">
+          <option value="mobile">📱 Mobile</option>
+          <option value="desktop">🖥️ Desktop</option>
+        </select>
+
+        <label for="difficulty">Difficulty</label>
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+
+        <label for="mode">Game Mode</label>
+        <select id="mode">
+          <option value="classic">Classic</option>
+          <option value="endless">Endless</option>
+          <option value="timeAttack">Time Attack</option>
+          <option value="boss">Boss Battle</option>
+          <option value="hardcore">Hardcore</option>
+          <option value="coinRush">Coin Rush</option>
+        </select>
+
+        <button id="playBtn">▶ PLAY GAME</button>
+
+        <div class="menu-grid">
+          <button data-screen="shop">🐤 Bird Shop</button>
+          <button data-screen="worlds">🌍 Worlds</button>
+          <button data-screen="rewards">🎁 Rewards</button>
+          <button data-screen="missions">🏆 Achievements</button>
+          <button data-screen="leaderboard">🥇 Scores</button>
+          <button data-screen="statistics">📊 Statistics</button>
+          <button data-screen="settings">⚙️ Settings</button>
+          <button data-screen="backup">💾 Save Backup</button>
+        </div>
+
+        <p class="muted">SPACE / CLICK / TAP TO FLY</p>
+      </div>
+
+      <div class="overlay hidden" id="pause">
+        <h2>⏸ PAUSED</h2>
+        <button id="resumeBtn">RESUME</button>
+        <button id="pauseHome" class="secondary">MAIN MENU</button>
+      </div>
+
+      <div class="overlay hidden" id="gameOver">
+        <h2>GAME OVER!</h2>
+        <p>Score: <b id="finalScore">0</b></p>
+        <p>Coins: <b id="finalCoins">0</b></p>
+        <p>Best: <b id="finalBest">0</b></p>
+        <p id="resultMessage"></p>
+        <button id="reviveBtn">❤️ REVIVE</button>
+        <button id="againBtn">PLAY AGAIN</button>
+        <button id="gameHomeBtn" class="secondary">MAIN MENU</button>
+      </div>
+
+      <div class="overlay hidden" id="panel">
+        <h2 id="panelTitle">COLLECTION</h2>
+        <div id="panelContent" class="panel-content"></div>
+        <button id="panelBack" class="secondary">← BACK TO MENU</button>
+      </div>
+
+    </section>
+
+    <section class="powerbar">
+      <button data-power="shield">🛡️ Shield</button>
+      <button data-power="magnet">🧲 Magnet</button>
+      <button data-power="slow">⏳ Slow</button>
+      <button data-power="double">✨ Double</button>
+    </section>
+
+    <footer>
+      <button id="soundBtn">🔊 Sound ON</button>
+      <button id="musicBtn">🎵 Music OFF</button>
+      <p>Flappy Bird 2.0 · Offline Arcade Edition</p>
+    </footer>
+
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
